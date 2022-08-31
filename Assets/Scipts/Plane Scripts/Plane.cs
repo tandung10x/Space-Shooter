@@ -19,17 +19,18 @@ public class Plane : MonoBehaviour
 
     void FixedUpdate()
     {
-        PlaneMovement();
+        //PlaneMovementByKeyboard();
+        PlaneMovementByMouse();
     }
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.Space) && canShoot)
+        if((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0)) && canShoot)
         {
             StartCoroutine(Shoot());
         }
     }
-    void PlaneMovement()
+    void PlaneMovementByKeyboard()
     {
         float xAxis = Input.GetAxisRaw("Horizontal") * planeSpeed;
         float yAxis = Input.GetAxisRaw("Vertical") * planeSpeed;
@@ -37,6 +38,12 @@ public class Plane : MonoBehaviour
         myBody.velocity = new Vector2(xAxis, yAxis);
     }
 
+    void PlaneMovementByMouse()
+    {
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //mousePosition.z = Camera.main.transform.position.z + Camera.main.nearClipPlane;
+        transform.position = mousePosition;
+    }
     IEnumerator Shoot() //delay
     {
         canShoot = false;

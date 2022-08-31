@@ -18,4 +18,17 @@ public class YellowBullet : MonoBehaviour
     {
         myBody.velocity = new Vector2(0f, speed);
     }
+
+    void OnTriggerEnter2D(Collider2D target)
+    {
+        if (target.CompareTag("Enemy"))
+        {
+            Destroy(target.gameObject);
+            Destroy(gameObject);
+        }
+
+        if (target.CompareTag("Borders")) {
+            Destroy(gameObject);
+        }
+    }
 }

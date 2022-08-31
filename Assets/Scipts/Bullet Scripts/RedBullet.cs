@@ -19,9 +19,16 @@ public class RedBullet : MonoBehaviour
         myBody.velocity = new Vector2(0f, -speed);
     }
 
-    void OnTriggerEnter2D(Collider2D target) {
-        if(target.tag == "Player") {
+    void OnTriggerEnter2D (Collider2D target)
+    {
+        if (target.CompareTag("Player"))
+        {
             Destroy(target.gameObject);
+            GamePlayController.instance.PlaneDiedShowPanel();
+        }
+
+        if (target.CompareTag("Borders")) {
+            Destroy(gameObject);
         }
     }
 }

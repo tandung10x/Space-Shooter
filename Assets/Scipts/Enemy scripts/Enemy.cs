@@ -38,8 +38,13 @@ public class Enemy : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D target) {
-        if(target.tag == "Player") {
+        if(target.CompareTag("Player")) {
             Destroy(target.gameObject);
+            GamePlayController.instance.PlaneDiedShowPanel();
+        }
+
+        if(target.CompareTag("Borders")) {
+            Destroy(gameObject);
         }
     }
 }

@@ -1,9 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GamePlayController : MonoBehaviour
 {
+    public static GamePlayController instance;
+
+    void Awake()
+    {
+        MakeInstance();
+    }
+
+    void MakeInstance()
+    {
+        if (instance == null) instance = this;
+    }
+
     [SerializeField]
     private GameObject pausePanel, gameOverPanel;
     public void PauseGameButton() {
@@ -17,12 +30,12 @@ public class GamePlayController : MonoBehaviour
     }
 
     public void OptionsButton() {
-        Application.LoadLevel("MainMenu");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void RestartButton() {
         gameOverPanel.SetActive(false);
-        Application.LoadLevel("GamePlay");
+        SceneManager.LoadScene("GamePlay");
     }
 
     public void PlaneDiedShowPanel() {

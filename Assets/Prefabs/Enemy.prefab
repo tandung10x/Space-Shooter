@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3435088998460434669}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.30914164}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.691875, y: 2.92}
+  m_Size: {x: 2.515223, y: 1.9484122}
   m_EdgeRadius: 0
 --- !u!61 &3435088998460434675
 BoxCollider2D:
@@ -125,7 +125,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.025396526, y: 1.0310025}
+  m_Offset: {x: 0.025396526, y: 1.0162815}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -136,7 +136,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5484092, y: 0.7360906}
+  m_Size: {x: 0.5484092, y: 0.7066486}
   m_EdgeRadius: 0
 --- !u!50 &3435088998460434668
 Rigidbody2D:
